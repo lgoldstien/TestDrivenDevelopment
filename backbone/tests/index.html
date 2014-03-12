@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <title>Backbone TDD</title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="../node_modules/mocha/mocha.css" />
+
+</head>
+
+<body>
+    
+    <div id="mocha"></div>
+
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+    <script>
+    // Setup the test libs
+    var expect = chai.expect;
+    mocha.setup('bdd');
+
+    // Run tests on load
+    window.onload = function () {
+        mocha.run();
+    };
+    </script>
+
+    <script src="spec/hello.spec.js"></script>
+</body>
+</html>
