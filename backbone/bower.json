@@ -1,6 +1,7 @@
 {
   "name": "backbone-tdd",
   "dependencies": {
-    "backbone": "~1.1.2"
+    "backbone": "~1.1.2",
+    "showdown": "~0.3.1"
   }
 }
