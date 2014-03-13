@@ -1,0 +1,30 @@
+<% if (tasks.length > 0) { tasks.each(function(task, key, coll) { window.task = task; %>
+<div class="panel <% if (task.get('done')) { %>panel-success<% } else { %>panel-info<% } %>">
+    <div class="panel-heading">
+        <div class="pull-right btn-group">
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#<%= task.cid %>">
+                <i class="fa fa-eye"></i>
+            </button>
+            <button class="btn btn-danger taskDelete">
+                <i class="fa fa-minus-square"></i>
+            </button>
+            <button class="btn btn-info taskEdit">
+                <i class="fa fa-pencil-square"></i>
+            </button>
+            <button class="btn btn-success taskComplete">
+                <i class="fa fa-check-square"></i>
+            </button>
+        </div>
+        <h4><%= task.get('name') %></h4>
+    </div>
+    <div id="<%= task.cid %>" class="panel-body collapse">
+        <%= task.get('content') %>
+    </div>
+</div>
+<% }); } else { %>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <button class="btn btn-lg btn-success btn-block taskNew">Create Task</button>
+    </div>
+</div>
+<% } %>
